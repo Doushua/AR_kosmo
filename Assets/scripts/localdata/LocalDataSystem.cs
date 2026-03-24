@@ -5,21 +5,27 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [Serializable]
-public class LocalDataSystem : IInit
+public class LocalDataSystem : MonoBehaviour, IInit
 {
-    private readonly string dataPath;
-    private readonly string fileName; 
+    public static LocalDataSystem instance { get; set; }
+    private string dataPath { get; set; }
+    [SerializeField] private string dataFile;
     [field:SerializeField] public LocalData LocalData {get; set; }
-
-    public LocalDataSystem(string fileName)
-    {
-        this.fileName = fileName;
-        
-        dataPath = Path.Combine(Application.persistentDataPath, fileName);
-    }
 
     public void Init()
     {
+#region singlton
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+            Destroy(gameObject);
+#endregion
+
+#region initialization
+        dataPath = Path.Combine(Application.persistentDataPath, dataFile);
         if (!File.Exists(dataPath))
         {
             File.CreateText(dataPath).Close();
@@ -31,8 +37,12 @@ public class LocalDataSystem : IInit
             if(!string.IsNullOrEmpty(json))
                 LocalData = JsonUtility.FromJson<LocalData>(json);
         }
+#endregion
     }
 
+    /// <summary>
+    /// метод сохранения данных
+    /// </summary>
     public void Save()
     {
         File.WriteAllText(dataPath, JsonUtility.ToJson(LocalData));

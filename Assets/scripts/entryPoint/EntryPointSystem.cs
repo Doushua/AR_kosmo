@@ -6,13 +6,9 @@ using UnityEngine;
 public class EntryPointSystem : MonoBehaviour
 {
     public static EntryPointSystem instance { get; private set; }
-
-    [SerializeField] private string dataFile;
+    
     [Header("системы")]
-    [SerializeField] private AuthSystem authSystem;
-    [SerializeField] public LocalDataSystem localDataSystem;
-
-    public List<IInit> inits;
+    [SerializeField] private List<GameObject> inits;
 
     /// <summary>
     /// Реализация паттерна проектирования - Singlton
@@ -30,21 +26,12 @@ public class EntryPointSystem : MonoBehaviour
 
     private System.Collections.IEnumerator Start()
     {
-        inits = new List<IInit>();
-        localDataSystem = new LocalDataSystem(dataFile);
-        
-        if (localDataSystem is IInit item)
-        {
-            inits.Add(item);
-        }
-
         foreach (var init in inits)
         {
-            init.Init();
+            if(init.TryGetComponent(out IInit component))
+                component.Init();
         }
-        
-        authSystem.users = localDataSystem.LocalData.users;
-        
+
         yield return null;
     }
 }

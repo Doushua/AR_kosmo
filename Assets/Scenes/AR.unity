@@ -882,12 +882,6 @@ MonoBehaviour:
           m_StringArgument: AR
           m_BoolArgument: 0
         m_CallState: 2
-  login: 
-  password: 
-  confirmPassword: 
-  name: 
-  authButton: {fileID: 0}
-  regButton: {fileID: 0}
 --- !u!4 &2001959405
 Transform:
   m_ObjectHideFlags: 0
@@ -968,8 +962,8 @@ SceneRoots:
   - {fileID: 1402602523}
   - {fileID: 797486981}
   - {fileID: 773244155}
-  - {fileID: 1304534897099299884}
   - {fileID: 2001959405}
   - {fileID: 1433378785}
   - {fileID: 139696724}
   - {fileID: 849176341}
+  - {fileID: 1304534897099299884}

@@ -1868,7 +1868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &559665746
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2240,7 +2240,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 60
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2327,9 +2327,9 @@ RectTransform:
   - {fileID: 1460726829}
   m_Father: {fileID: 753941606}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -245}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &701678611
@@ -2759,9 +2759,9 @@ RectTransform:
   - {fileID: 730261976}
   m_Father: {fileID: 753941606}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &733599807
@@ -3004,7 +3004,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 294}
-  m_SizeDelta: {x: 800, y: 320}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &753941607
 MonoBehaviour:
@@ -4347,6 +4347,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+--- !u!1 &1202342375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2205195330758137576, guid: 6096126e310a22746b4a0cb25128d70c, type: 3}
+  m_PrefabInstance: {fileID: 1408368791}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1261529197
 GameObject:
   m_ObjectHideFlags: 0
@@ -4761,13 +4766,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2205195330758137576, guid: 6096126e310a22746b4a0cb25128d70c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1408368796}
   m_SourcePrefab: {fileID: 100100000, guid: 6096126e310a22746b4a0cb25128d70c, type: 3}
 --- !u!224 &1408368792 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8767121702931820579, guid: 6096126e310a22746b4a0cb25128d70c, type: 3}
   m_PrefabInstance: {fileID: 1408368791}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1408368796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202342375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Shadow
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.41960785}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1445416303
 GameObject:
   m_ObjectHideFlags: 0
@@ -4968,6 +4991,10 @@ PrefabInstance:
     - target: {fileID: 2205195330758137576, guid: 6096126e310a22746b4a0cb25128d70c, type: 3}
       propertyPath: m_Name
       value: ExitButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4081012290644011714, guid: 6096126e310a22746b4a0cb25128d70c, type: 3}
+      propertyPath: m_text
+      value: "\u0412\u044B\u0445\u043E\u0434"
       objectReference: {fileID: 0}
     - target: {fileID: 5027825277925806976, guid: 6096126e310a22746b4a0cb25128d70c, type: 3}
       propertyPath: m_Color.b
@@ -6296,8 +6323,8 @@ SceneRoots:
   - {fileID: 597618330}
   - {fileID: 425766266}
   - {fileID: 981298087}
+  - {fileID: 460692755}
   - {fileID: 188110974}
   - {fileID: 1261529198}
   - {fileID: 1076161719}
-  - {fileID: 460692755}
   - {fileID: 1019756422}

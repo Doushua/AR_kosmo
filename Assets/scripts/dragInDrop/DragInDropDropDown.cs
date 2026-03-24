@@ -10,7 +10,7 @@ public class DragInDropDropDown : TMP_Dropdown
     {
         if (itemTemplate.gameObject.TryGetComponent(out DropDownItem item))
         {
-            item.Construct(itemsPrefab[count]);
+            item.itemTemplate = itemsPrefab[count];
             count++;
         }
         

@@ -4,4 +4,5 @@ using UnityEngine;
 public class TileController : MonoBehaviour
 {
     [SerializeField] private TileType tileType;
+    public bool isInstante;
 }
